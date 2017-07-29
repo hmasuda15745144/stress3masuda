@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :accounts
+  
+  get 'helo/login_check'
   get 'helo/index'
   get 'helo', to: 'helo#index'
 

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'helo/index'
+
+  get 'helo/add'
+
+  get 'helo/edit'
+
+  get 'helo/dell'
+
+  get 'helo/list'
+
   devise_for :accounts
   
   get 'helo/login_check'

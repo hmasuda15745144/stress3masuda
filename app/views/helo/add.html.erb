@@ -1,2 +1,34 @@
 <h1>Helo#add</h1>
 <p>Find me in app/views/helo/add.html.erb</p>
+<h1>Comments#add</h1>
+<p>Find me in app/views/comments/add.html.erb</p>
+<p><%= @msg %></p>
+
+<% if @helo.errors.any? %>
+<ul>
+	<% @account.errors.full_helo.each do |err| %>
+	<li><%= err %></li>
+	<% end %>
+</ul>
+<% end %>
+
+<table>
+	<%= form_for(@helo, url:{controller:'helo', action:'create' }) do |form| %>
+	<tr><th>id</th>
+	<td><%= form.text_field :id %></td></tr>
+	<tr><th>talker_id</th>
+		<td><%= form.text_field :account_id %></td></tr>
+	<tr><th>ts</th>
+		<td><%= form.text_field :ts %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :kubun %></td></tr>
+	</tr>
+	<tr><th></th>
+			<td><%= form.text_field :word %></td></tr>
+	</tr>
+	<tr><th></th>
+		<td><%= form.submit "送信" %></td></tr>
+	</tr>
+	<% end %>
+</table>

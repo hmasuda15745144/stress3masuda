@@ -15,11 +15,11 @@ class HeloController < ApplicationController
 
   def add
     @msg = "add new data."
-    @helo = helo.new
+    @helo = Helo.new
   end
-
+  
   def create
-    @helo = Helo.new comment_params
+    @helo = Helo.new helo_params
     if @helo.save then 
           redirect_to '/helo'
           return

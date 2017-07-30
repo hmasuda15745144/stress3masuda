@@ -16,15 +16,14 @@
 	<% @data.each do |obj| %>
 	<tr>
 		<td><%= obj.id %></td>
-		<td><%= obj.talker.name %></td>
+        <td><%= obj.account.email %></td>
 		<td><%= obj.ts %></td>
 		<td><%= obj.kubun %></td>
-		<td><%= obj.comment %></td>
+		<td><%= obj.word %></td>
 	</tr>
 	<% end %>
 </table>
 </pre>
-
 <hr>
 <div><%=link_to 'go to login_check page!&gt;&gt;'.html_safe, {action:'login_check'} %></div>
 <div><%= link_to "Sign out&gt;&gt;".html_safe, destroy_account_session_path, method: :delete %></div>
